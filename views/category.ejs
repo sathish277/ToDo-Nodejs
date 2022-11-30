@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/category.css">
+    </head>
+    <body>
+        <h2>Add Category</h2>
+        <div class="category-form">
+            <form action="/category/addCategory" method="POST">
+                <input type="text" name="categoryname" placeholder="Enter Category Name" required>
+                <input type="submit" value="Add Category" id="category-button">
+            </form>
+        </div>
+    </body>
+</html>

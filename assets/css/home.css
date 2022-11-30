@@ -1,0 +1,172 @@
+/***************global****************************8/
+body{
+  font-family: sans-serif;
+}
+input::placeholder{
+  text-align: center;
+  font-weight: 200;
+}
+
+/********************* heading **************************/
+#todo-heading
+{
+  text-align: center;
+  color:rgb(0, 37, 223);
+  text-shadow: rgb(255, 44, 44) 0.5px 0.5px 3px;
+}
+
+/*********************** todo form division **********************8*/
+.todo-division
+{
+  display: flex;
+  flex-direction: column;
+  margin:2% 28% 3% 28%;
+}
+.selection_date
+{
+  display: flex;
+  flex-direction: row;
+}
+#taskdescr
+{
+  border-radius: 0;
+  border-color: rgb(6, 156, 206);
+  border-style: solid;
+  resize: none; /*to remove default resizing behaviour from text area*/
+  
+  
+} 
+#taskdescr:hover{
+  box-shadow: 0px 0px 5px 2px white ;
+  background-color: rgb(228, 228, 228);
+}
+.selection-class
+{
+  position: relative;
+  margin-left:0;
+  text-align: center;
+}
+#select_option
+{
+  
+  border-radius: 0;
+  border-color: rgb(6, 156, 206);
+  border-style: solid;
+  height:6vh;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  text-align-last: center;
+}
+#select_option:hover{
+  box-shadow: 0px 0px 5px 2px white ;
+  background-color: rgb(211, 211, 211);
+}
+#date
+{
+  border-radius: 0;
+  border-color: rgb(6, 156, 206);
+  border-width: 0.1;
+  height:6vh;
+  padding-left: 6vw;
+  padding-right: 5.3vw;
+}
+#date:hover{
+  box-shadow: 0px 0px 5px 2px white ;
+  background-color: rgb(211, 211, 211);
+}
+
+/********************buttons****************************/
+
+.buttons
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#button_addtask
+{
+  height:7vh;
+  width:8vw;
+  background-color: blue;
+  color: white;
+  border-radius: 0;
+}
+#button_addtask:hover
+{
+  cursor: pointer;
+  border-color:aqua;
+}
+.fa-plus
+{
+  color: white;
+  margin-right: 4px;
+}
+/*************list Items**************************/
+.tasks-list
+{
+  display: flex;
+  flex-direction: column;
+}
+.list-items
+{
+  list-style: none;
+}
+.list-item
+{
+  display:flex;
+  flex-direction: row;
+  margin-left:15%;
+  margin-right: 15%;
+  padding-top: 3vh;
+  padding-bottom:3vh; 
+  align-items: center;
+
+}
+
+#forminput
+{
+  margin-left: 1%;
+  margin-right: 2%
+}
+
+.list-item:hover{
+  background-color: lightgray;
+}
+
+
+#idcheckbox
+{
+  cursor: pointer;
+}
+#label-task
+{
+  
+  margin-right:50vw;
+}
+#divcategory
+{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:6vh;
+  width:9vw;
+  font-weight:500;
+  background-color:blueviolet;
+  color:white;
+  margin-right:4%;
+}
+#deleteicon
+{
+  margin-right:2%;
+}
+.fa-trash
+{
+  color: red;
+}
+
+/*******************category Section **************/
+.addCategory
+{
+  margin-top:10vh;
+  text-align: center;
+}

@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <script src="https://kit.fontawesome.com/2ca80e7901.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css" type="text/css">
+    </head>
+    <body>
+        <!-- heading -->
+        <h1 id="todo-heading">To Do App</h1>
+        <!-- Task add form  -->
+        <div class="forms-section">
+            <form action="/addTask" method="POST">
+                <div class="todo-division">
+                    <!-- <input type="text" name="taskDescription" placeholder="Enter your description"> -->
+                    <textarea name="taskname" id="taskdescr" cols="75" rows="3" placeholder="Enter your task description" required></textarea>
+                    <div class="selection_date">
+                        <div class="selection-class">
+                            <select name="category" id="select_option" required>
+                                <option value="" disabled selected>Choose a Category</option>
+                                <% for (let cat of Category) {%>
+                                    <option><b><%=cat.categoryname%></b></option>
+                                <%}
+                                %>
+                                
+                                <!-- <option><b>Personal</b></option>
+                                <option><b>Work</b> </option>
+                                <option><b>Education</b></option>
+                                <option><b>Others</b></option> -->
+                            </select>
+
+                        </div>
+                        <div>
+                            <input id="date" type="date" name="duedate" placeholder="Due data dd/mm/yyyy" required>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="buttons">
+                    <button type="submit" id="button_addtask"><i class="fa-solid fa-plus"></i>Add Task</button>
+                </div>
+            </form>
+            
+        </div>
+        <!-- ToDo List -->
+        <div class="tasks-list">
+            <ul class="list-items">
+                <% for (let task of tasks) {%>                   
+                    <div>
+                        <li class="list-item">
+                            <form action="/markAsDone/<%=task._id%>" method="POST" id="forminput">
+                                <input type="checkbox" name="isdone" id="idcheckbox" onChange="this.form.submit()"
+                                <% if(task.isdone) {%>
+                                    checked
+                                <%}%>
+                                > 
+                            </form>                                                             
+                            <div class="label-date">
+                                <label id="label-task"
+                                    <% if(task.isdone) {%>
+                                        style="text-decoration: line-through";
+                                    <%}%>
+                                >
+                                    <span><b><%= task.taskname%></b></span>
+                                    <div id="tododate"><i class="fa-regular fa-calendar-days"></i>
+                                        <%= task.duedate.toLocaleString('en-US', {month: 'short'})+' '+task.duedate.getDate()+', '+task.duedate.getFullYear() %>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div id="divcategory">
+                                <span id="spancategory"><%= task.category %></span>
+                            </div>
+                            <div id="deleteicon">
+                                <a href="/deleteTask/<%=task._id%>"><i class="fa-solid fa-trash"></i></a>
+                            </div>                                                 
+                        </li>
+                    </div>
+                
+                <%
+
+                }%>
+            </ul>
+        </div>
+        <!-- add category section -->
+        <div class="addCategory">
+            <p>Didn't you find the Category you need? Please <a href="/category/show">Click Here</a> to Add.</p>
+        </div>
+    </body>
+</html>
